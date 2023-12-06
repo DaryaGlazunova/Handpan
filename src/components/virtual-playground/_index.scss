@@ -1,0 +1,66 @@
+@import "@scss/_variables.scss";
+
+.playground {
+  position: relative;
+  border-radius: 40px;
+  z-index: 2;
+  // animation: textColor 10s ease infinite;
+  @include backlight(0, 5vw, 5vw, 1, $green-color, $purple-color, 10s);
+
+  @keyframes textColor {
+    0% {
+      color: $purple-color;
+    }
+    50% {
+      color: $green-color;
+    }
+    100% {
+      color: $purple-color;
+    }
+  }
+
+  &__container {
+    background-color: $playground-background-color;
+    padding: 30px 100px;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  &__top-actions {
+  }
+
+  &__handpan {
+  }
+
+  &__scale {
+  }
+  &__change-sound {
+  }
+}
+
+.no-select {
+}
+
+.handpan-note-play {
+  @include note-shadow(0);
+}
+
+.scale-note-selected {
+  color: $orange-color;
+}

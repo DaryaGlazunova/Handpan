@@ -1,0 +1,36 @@
+@import "@scss/_variables.scss";
+
+.scale {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__name {
+    color: $font-color-white;
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+
+  &__notes {
+  }
+}
+
+.notes {
+  &__note {
+    margin-right: 5px;
+    padding: 0 10px;
+    color: $font-color-white;
+    font-size: 16px;
+    &:last-child {
+      margin-right: 0;
+    }
+    &:hover {
+      color: $beige-color;
+    }
+  }
+}
+
+.tone {
+}
+
+.no-select {
+}

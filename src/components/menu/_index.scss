@@ -1,0 +1,57 @@
+@import "@scss/_variables.scss";
+
+.menu {
+  &__body {
+    display: flex;
+    align-items: center;
+  }
+
+  &__items {
+    display: flex;
+    margin-right: 60px;
+    & li {
+      margin-right: 30px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__item {
+    color: $font-color-white;
+    font-size: 14px;
+    font-family: $main-font-family;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    &:hover {
+      text-decoration: underline;
+    }
+
+    & .active {
+      text-decoration: underline;
+    }
+  }
+
+  &__social-media {
+    display: flex;
+    align-items: center;
+    & li {
+      margin-right: 15px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__social-media-icon {
+    width: 25px;
+    height: 25px;
+
+    & img {
+      width: 35px;
+      height: 35px;
+    }
+  }
+}
