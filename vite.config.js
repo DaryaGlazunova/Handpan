@@ -4,6 +4,7 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: "https://daryaglazunova.github.io/Handpan/",
   plugins: [react()],
   resolve: {
     alias: {
