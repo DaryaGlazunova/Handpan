@@ -5,18 +5,27 @@ import retryImage from "@images/main-page/playground/change-sound/retry.svg";
 import "./_index.scss";
 
 export default function ChangeSound(props) {
-  const { selectedNote } = { ...props };
+  const { selectedNote, onClickTonality } = { ...props };
   return (
     <div className="playground__change-sound change-sound">
       <div className="change-sound__title">Измените звук</div>
       <div className="change-sound__buttons">
-        <button className="change-sound__minus">
+        <button
+          onClick={() => onClickTonality("down")}
+          className="change-sound__minus"
+        >
           <img src={minusImage} alt="" />
         </button>
-        <button className="change-sound__reset">
+        <button
+          onClick={() => onClickTonality("reset")}
+          className="change-sound__reset"
+        >
           <img src={retryImage} alt="" />
         </button>
-        <button className="change-sound__plus">
+        <button
+          onClick={() => onClickTonality("up")}
+          className="change-sound__plus"
+        >
           <img src={plusImage} alt="" />
         </button>
       </div>

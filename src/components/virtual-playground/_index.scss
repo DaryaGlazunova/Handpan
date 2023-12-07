@@ -5,7 +5,7 @@
   border-radius: 40px;
   z-index: 2;
   // animation: textColor 10s ease infinite;
-  @include backlight(0, 5vw, 5vw, 1, $green-color, $purple-color, 10s);
+  @include backlight(0, 5vw, 5vw, 1, $green-color, $purple-color, 5s);
 
   @keyframes textColor {
     0% {
@@ -58,9 +58,9 @@
 }
 
 .handpan-note-play {
-  @include note-shadow(0);
+  @include note-shadow(0.7);
 }
 
 .scale-note-selected {
-  color: $orange-color;
+  color: $beige-color;
 }
