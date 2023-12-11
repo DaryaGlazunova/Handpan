@@ -1,0 +1,81 @@
+{
+  "scales": [
+    {
+      "id": 1,
+      "name": "D-Celtic-minor",
+      "type": "kurd9",
+      "fronSide": {
+        "notes": [
+          { "tone": "D3", "order": 0 },
+          { "tone": "A3", "order": 1 },
+          { "tone": "C4", "order": 2 },
+          { "tone": "D4", "order": 3 },
+          { "tone": "E4", "order": 4 },
+          { "tone": "F4", "order": 5 },
+          { "tone": "G4", "order": 6 },
+          { "tone": "A4", "order": 7 },
+          { "tone": "C5", "order": 8 }
+        ],
+        "image": "handpanImageFront"
+      },
+      "backSide": {
+        "notes": [],
+        "image": "handpanImageBack"
+      }
+    },
+    {
+      "id": 2,
+      "type": "kurd9",
+      "name": "D-Celtic-minor-2",
+      "fronSide": {
+        "notes": [
+          { "tone": "D3", "order": 0 },
+          { "tone": "A3", "order": 1 },
+          { "tone": "C4", "order": 2 },
+          { "tone": "D4", "order": 3 },
+          { "tone": "E4", "order": 4 },
+          { "tone": "F4", "order": 5 },
+          { "tone": "G4", "order": 6 },
+          { "tone": "A4", "order": 7 },
+          { "tone": "C5", "order": 8 }
+        ],
+        "image": "handpanImageFront"
+      },
+      "backSide": {
+        "notes": [
+          { "tone": "F3", "order": 9 },
+          { "tone": "A3", "order": 10 }
+        ],
+        "image": "handpanImageBack"
+      }
+    },
+    {
+      "id": 3,
+      "type": "kurd9",
+      "name": "D-Celtic-minor-4",
+      "fronSide": {
+        "notes": [
+          { "tone": "F3", "order": 0 },
+          { "tone": "G3", "order": 1 },
+          { "tone": "G#3", "order": 2 },
+          { "tone": "C4", "order": 3 },
+          { "tone": "D#4", "order": 4 },
+          { "tone": "F4", "order": 5 },
+          { "tone": "G4", "order": 6 },
+          { "tone": "G#4", "order": 7 },
+          { "tone": "C5", "order": 8 }
+        ],
+        "image": "handpanImageFront"
+      },
+      "backSide": {
+        "notes": [
+          { "tone": "C#3", "order": 9 },
+          { "tone": "D#3", "order": 10 },
+          { "tone": "D#5", "order": 11 },
+          { "tone": "F5", "order": 12 }
+        ],
+        "image": "handpanImageBack"
+      }
+    }
+  ]
+}

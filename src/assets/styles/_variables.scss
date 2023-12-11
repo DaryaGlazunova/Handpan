@@ -5,13 +5,13 @@
 $main-font-family: "Inter", sans-serif;
 $logo-font-family: "Montserrat", sans-serif;
 
-$main-background-color-black: #1a1d24;
-$playground-background-color: #151823;
+$main-background-color-black: rgb(33, 23, 44);
+$playground-background-color: rgb(64, 54, 78);
 
-$green-color: #0fffc1;
+$green-color: #ffde00;
 $purple-color: #7e0fff;
-$orange-color: rgb(255, 145, 0);
-$beige-color: #ffd5a2;
+$orange-color: $green-color;
+$beige-color: $green-color;
 
 $border-color: #434e72;
 $box-shadow-color: #7f0fff7c;
@@ -21,3 +21,8 @@ $note-play-shadow: $orange-color;
 
 $font-color-white: #fffcfc;
 $font-color-yellow: #fffcfc;
+$font-color-orange: #ff7222;
+
+$btn-background-color: #ffffff;
+$btn-text-color: #ff7222;
+$btn-border-color: #ff7222;

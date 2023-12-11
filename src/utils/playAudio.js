@@ -1,7 +1,9 @@
 export const playNoteAudio = (tone) => {
-  console.log(`/src/assets/sounds/kurd9/${tone}.wav`);
-  let audio = new Audio(
-    `/src/assets/sounds/kurd9/${tone.replace("#", "_")}.wav`
-  );
+  const audioUrl = new URL(
+    `../assets/sounds/kurd9/${tone.replace("#", "_")}.wav`,
+    import.meta.url
+  ).href;
+
+  let audio = new Audio(audioUrl);
   audio.play();
 };

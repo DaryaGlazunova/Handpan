@@ -1,13 +1,25 @@
 import React from "react";
-import handpanImage from "@images/main-page/playground/handpan.png";
+import imageUrl from "@images/main-page/playground/kurd9/front.png";
+import imageUrlBack from "@images/main-page/playground/kurd9/back.png";
+
 import "./_index.scss";
 
 export default function HandPan(props) {
-  const { selectedNote, notesList, selectedHandpan } = { ...props };
+  const {
+    selectedNote,
+    notesList,
+    selectedHandpan,
+    // imageUrl,
+    // imageUrlBack,
+    turnHandpan,
+  } = {
+    ...props,
+  };
 
-  const notesButtonsList = notesList.map((note) => {
+  const notesButtonsList = notesList.map((note, index) => {
     return (
       <button
+        key={index}
         id={note.tone}
         className={
           selectedNote == note.tone
@@ -31,8 +43,18 @@ export default function HandPan(props) {
   return (
     <div className={`playground__handpan handpan ${selectedHandpan}`}>
       <div className="handpan__container">
-        <div className="handpan__circle">
-          <img src={handpanImage} className="handpan__image" alt="" />
+        <div
+          className={turnHandpan ? "handpan__body flipped" : "handpan__body"}
+        >
+          <div className="handpan__front">
+            <img src={imageUrl} className="handpan__image" alt="" />
+          </div>
+          {imageUrlBack && (
+            <div className="handpan__back">
+              <img src={imageUrlBack} className="handpan__image" alt="" />
+            </div>
+          )}
+
           {notesButtonsList}
         </div>
       </div>

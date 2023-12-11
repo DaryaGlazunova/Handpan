@@ -2,10 +2,27 @@
 
 .handpan {
   &__container {
-    position: relative;
   }
 
-  &__circle {
+  &__body {
+    position: relative;
+
+    &.flipped .handpan__front {
+      -webkit-transform: rotateY(-180deg);
+      transform: rotateY(-180deg);
+    }
+    &.flipped .handpan__back {
+      -webkit-transform: rotateY(0);
+      transform: rotateY(0);
+    }
+  }
+
+  &__front,
+  &__back {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: -webkit-transform 0.3s;
+    transition: transform linear 0.5s;
   }
 
   &__image {
@@ -13,6 +30,18 @@
     height: auto;
   }
 
+  &__front {
+  }
+
+  &__back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+  }
+
+  //________________________________________________________________________________________-
   &__note {
     position: absolute;
     transition: 0.5s;
@@ -112,5 +141,92 @@
     top: 7%;
     left: 30%;
     transform: rotate(-25deg);
+  }
+}
+
+.kurd11 {
+  & .handpan__note-0 {
+    width: 31%;
+    height: 36%;
+    top: 49%;
+    left: 63%;
+    transform: translate(-100%, -50%);
+  }
+  & .handpan__note-1 {
+    width: 24%;
+    height: 20%;
+    bottom: 10%;
+    right: 20%;
+    transform: rotate(-23deg);
+  }
+
+  & .handpan__note-2 {
+    width: 26%;
+    height: 20%;
+    bottom: 9%;
+    left: 22%;
+    transform: rotate(35deg);
+  }
+
+  & .handpan__note-3 {
+    width: 20%;
+    height: 20%;
+    bottom: 35%;
+    right: 5%;
+    transform: rotate(7deg);
+  }
+
+  & .handpan__note-4 {
+    width: 18%;
+    height: 24%;
+    bottom: 32%;
+    left: 5%;
+    transform: rotate(5deg);
+  }
+
+  & .handpan__note-5 {
+    width: 20%;
+    height: 22%;
+    top: 18%;
+    right: 10%;
+    transform: rotate(-23deg);
+  }
+
+  & .handpan__note-6 {
+    width: 18%;
+    height: 20%;
+    top: 20%;
+    left: 10%;
+    transform: rotate(50deg);
+  }
+
+  & .handpan__note-7 {
+    width: 15%;
+    height: 12%;
+    top: 7%;
+    right: 32%;
+    transform: rotate(26deg);
+  }
+
+  & .handpan__note-8 {
+    width: 15%;
+    height: 12%;
+    top: 7%;
+    left: 30%;
+    transform: rotate(-25deg);
+  }
+  & .handpan__note-9 {
+    width: 25%;
+    height: 30%;
+    top: 27%;
+    right: 9%;
+    transform: rotate(-25deg);
+  }
+  & .handpan__note-10 {
+    width: 12%;
+    height: 25%;
+    top: 63%;
+    left: 17%;
+    transform: rotate(-40deg);
   }
 }

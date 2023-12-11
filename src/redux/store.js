@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import notesReducer from "./notes/notesSlice";
+import scalesReducer from "./scales/scalesSlice";
 
 export const store = configureStore({
   reducer: {
-    notes: notesReducer,
+    scales: scalesReducer,
   },
 });

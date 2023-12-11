@@ -2,6 +2,7 @@
 
 .playground {
   position: relative;
+
   border-radius: 40px;
   z-index: 2;
   // animation: textColor 10s ease infinite;
@@ -35,7 +36,7 @@
     align-items: center;
   }
 
-  &__main {
+  &__body {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -43,14 +44,36 @@
   }
 
   &__top-actions {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
-  &__handpan {
+  &__saples-types {
+    & li {
+      padding: 2px 5px;
+      border-radius: 10px;
+      background-color: $btn-background-color;
+      font-weight: 600;
+      color: $btn-text-color;
+      border: 1px solid $btn-border-color;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__handpans {
+    display: flex;
+    gap: 30px;
   }
 
   &__scale {
   }
   &__change-sound {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -63,4 +86,14 @@
 
 .scale-note-selected {
   color: $beige-color;
+}
+
+.actions-btn {
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: $btn-background-color;
+  font-weight: 600;
+  color: $btn-text-color;
+  border: 1px solid $btn-border-color;
+  cursor: pointer;
 }

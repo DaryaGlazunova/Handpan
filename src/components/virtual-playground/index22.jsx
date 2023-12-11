@@ -1,21 +1,27 @@
-import React, { useCallback } from "react";
-import Scale from "./scale";
-import { fetchScales } from "../../redux/scales/asyncActions";
-import ChangeSound from "./change-sound";
-import { Status } from "../../redux/scales/scalesSlice";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import HandPan from "./handpan";
+
 import "./_index.scss";
+
+import { setScales, setSelectedScale } from "../../redux/scales/scalesSlice";
+import { fetchScales } from "../../redux/scales/asyncActions";
+import { Status } from "../../redux/scales/scalesSlice";
+
+import Scale from "./scale";
+import ChangeSound from "./change-sound";
+import HandPan from "./handpan";
+
 import {
   tonalityTransportUp,
   tonalityTransportDown,
 } from "../../utils/tonalityTransport";
 import { playNoteAudio } from "../../utils/playAudio";
 
-export default function VirtualPlayground(props) {
+export default function VirtualPlayground() {
   const dispatch = useDispatch();
+
   const { scales, status, selectedScale, noteOrder } = useSelector(
-    (state) => state.scales
+    (state) => state.notes
   );
 
   React.useEffect(() => {
@@ -39,6 +45,13 @@ export default function VirtualPlayground(props) {
         selectedScale.backSide.notes
       );
       setNoteList(sampleDefaultValue.current);
+      // frontNotesCount.current = selectedScale.fronSide.notes.length;
+      // // frontNotesList.current = noteList.slice(0, frontNotesCount.current);
+      // setFrontNotesList(noteList.slice(0, frontNotesCount.current));
+      // backNotesList.current = noteList.slice(
+      //   frontNotesCount.current,
+      //   noteList.length
+      // );
     }
   }, [scales]);
 
@@ -72,6 +85,7 @@ export default function VirtualPlayground(props) {
       setNoteList(newNoteList);
     }
   };
+
   const onClickTurnOver = () => {
     setTurnHandpan((prev) => !prev);
   };
@@ -95,6 +109,11 @@ export default function VirtualPlayground(props) {
       window.removeEventListener("click", (event) => onClickNote(event));
     };
   }, []);
+
+  //   const onChangeSamples = (event) => {
+  //     const typeId = event.target.id;
+  //     dispatch(setSample(typeId));
+  //   };
 
   return (
     <div className="playground">
