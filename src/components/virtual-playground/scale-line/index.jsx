@@ -1,7 +1,7 @@
 import React from "react";
 import "./_index.scss";
 
-export default function Scale(props) {
+export default function ScaleLine(props) {
   const { notesList, selectedNote, scaleName } = { ...props };
 
   const notesButtonsList = notesList.map((note, index) => {

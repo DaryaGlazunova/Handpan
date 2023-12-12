@@ -8,9 +8,11 @@ function App() {
     <div className="wrapper">
       {/* <img className="background-image" src={bgImage} alt="" /> */}
       <Header />
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+        </Routes>
+      </main>
     </div>
   );
 }

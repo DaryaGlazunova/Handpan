@@ -4,8 +4,12 @@ import "./_index.scss";
 
 const MainPage = () => {
   return (
-    <div className="main__container">
-      <VirtualPlayground />
+    <div className="container">
+      <div className="main__container">
+        <div className="main__playground">
+          <VirtualPlayground />
+        </div>
+      </div>
     </div>
   );
 };

@@ -1,8 +1,11 @@
 import React, { useCallback } from "react";
-import Scale from "./scale";
+import ScaleLine from "./scale-line";
+import ScalesMenu from "./scales-menu";
 import { fetchScales } from "../../redux/scales/asyncActions";
+import CreateScales from "./creacte-scale";
 import ChangeSound from "./change-sound";
-import { Status } from "../../redux/scales/scalesSlice";
+import { Status, setSelectedScale } from "../../redux/scales/scalesSlice";
+
 import { useSelector, useDispatch } from "react-redux";
 import HandPan from "./handpan";
 import "./_index.scss";
@@ -11,6 +14,10 @@ import {
   tonalityTransportDown,
 } from "../../utils/tonalityTransport";
 import { playNoteAudio } from "../../utils/playAudio";
+
+import imageFront from "@images/main-page/playground/kurd9/front.png";
+import imageBack from "@images/main-page/playground/kurd9/back.png";
+import Button from "../button";
 
 export default function VirtualPlayground(props) {
   const dispatch = useDispatch();
@@ -27,29 +34,30 @@ export default function VirtualPlayground(props) {
 
   const sampleDefaultValue = React.useRef([]);
   const [selectedNote, setSelectedNote] = React.useState(null);
+
   const [turnHandpan, setTurnHandpan] = React.useState(false);
   const [noteList, setNoteList] = React.useState([]);
   let frontNotesCount = React.useRef(0);
   const [frontNotesList, setFrontNotesList] = React.useState([]);
-  let backNotesList = React.useRef([]);
+  const [backNotesList, setBackNotesList] = React.useState([]);
 
   React.useEffect(() => {
     if (status === Status.success) {
-      sampleDefaultValue.current = selectedScale.fronSide.notes.concat(
-        selectedScale.backSide.notes
-      );
+      sampleDefaultValue.current = [
+        ...selectedScale.fronSide.notes,
+        ...selectedScale.backSide.notes,
+      ];
       setNoteList(sampleDefaultValue.current);
     }
-  }, [scales]);
+  }, [selectedScale]);
 
   React.useEffect(() => {
     if (status === Status.success) {
       frontNotesCount.current = selectedScale.fronSide.notes.length;
 
       setFrontNotesList(noteList.slice(0, frontNotesCount.current));
-      backNotesList.current = noteList.slice(
-        frontNotesCount.current,
-        noteList.length
+      setBackNotesList(
+        noteList.slice(frontNotesCount.current, noteList.length)
       );
     }
   }, [noteList]);
@@ -76,12 +84,42 @@ export default function VirtualPlayground(props) {
     setTurnHandpan((prev) => !prev);
   };
 
+  const onSelectScale = (event) => {
+    const scaleId = event.currentTarget.id;
+    const newSelectedScale = scales.find((scale) => scale.id == scaleId);
+    if (newSelectedScale) {
+      dispatch(setSelectedScale(newSelectedScale));
+    }
+  };
+
+  const onClickCreateNewScale = (event) => {
+    const scaleId = event.currentTarget.id;
+    let newSelectedScale = scales.find((scale) => scale.id == scaleId);
+
+    if (newSelectedScale) {
+      newSelectedScale = JSON.parse(JSON.stringify(newSelectedScale));
+      for (let scaleParam of Object.getOwnPropertyNames(newSelectedScale)) {
+        if (scaleParam.includes("Side")) {
+          const notesList = newSelectedScale[scaleParam].notes;
+          for (let i = 0; i < notesList.length; i++) {
+            newSelectedScale[scaleParam].notes[i]["tone"] = "♪";
+          }
+        }
+      }
+      dispatch(setSelectedScale(newSelectedScale));
+    }
+  };
+
   React.useEffect(() => {
-    const onClickNote = (event) => {
+    const onClickPlayNote = (event) => {
       const target = event.target.closest("button");
       if (target) {
         if (target.id) {
           const tone = target.id;
+
+          if (tone.length == 1) {
+            return;
+          }
           setSelectedNote(tone);
           setTimeout(() => setSelectedNote(null), 600);
           playNoteAudio(tone);
@@ -89,10 +127,10 @@ export default function VirtualPlayground(props) {
       }
     };
 
-    window.addEventListener("click", (event) => onClickNote(event));
+    window.addEventListener("click", (event) => onClickPlayNote(event));
 
     return () => {
-      window.removeEventListener("click", (event) => onClickNote(event));
+      window.removeEventListener("click", (event) => onClickPlayNote(event));
     };
   }, []);
 
@@ -103,7 +141,7 @@ export default function VirtualPlayground(props) {
       ) : (
         <div className="playground__container">
           <div className="playground__top">
-            <Scale
+            <ScaleLine
               scaleName={selectedScale.name}
               selectedNote={selectedNote}
               notesList={noteList}
@@ -112,20 +150,20 @@ export default function VirtualPlayground(props) {
           <div className="playground__body">
             <ChangeSound onClickTonality={onClickTonality} />
             <div className="playground__top-actions">
-              {/* <ul
-                className="playground__saples-types"
-                //   onClick={(event) => onChangeSamples(event)}
-              >
-                <li id="kurd9">kurd9</li>
-                <li id="kurd11">kurd11</li>
-              </ul> */}
-              {backNotesList.current.length === 0 && (
-                <div
-                  onClick={() => onClickTurnOver()}
-                  className="playground__turn-over-btn actions-btn"
-                >
-                  Перевернуть
-                </div>
+              <div className="playground__scales-menu">
+                <ScalesMenu onSelectScale={onSelectScale} scalesList={scales} />
+              </div>
+              <div className="playground__create-scale">
+                <CreateScales
+                  onClickCreateNewScale={onClickCreateNewScale}
+                  scalesList={scales}
+                />
+              </div>
+              {backNotesList.length === 0 && (
+                <Button
+                  onClickButton={onClickTurnOver}
+                  btnTitle="Перевернуть"
+                />
               )}
             </div>
             <div className="playground__handpans">
@@ -133,18 +171,18 @@ export default function VirtualPlayground(props) {
                 notesList={turnHandpan ? [] : frontNotesList}
                 selectedHandpan={selectedScale.type}
                 selectedNote={selectedNote}
-                // imageUrlBack={imageBack}
-                // imageUrl={imageFront}
+                imageUrlBack={imageBack}
+                imageUrl={imageFront}
                 turnHandpan={turnHandpan}
               />
-              {/* {backNotesList.length > 0 && (
+              {backNotesList.length > 0 && (
                 <HandPan
-                  notesList={backNotesList.current}
+                  notesList={backNotesList}
                   selectedHandpan={selectedScale.type}
                   selectedNote={selectedNote}
                   imageUrl={imageBack}
                 />
-              )} */}
+              )}
             </div>
           </div>
         </div>

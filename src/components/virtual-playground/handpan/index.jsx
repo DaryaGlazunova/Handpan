@@ -1,6 +1,6 @@
 import React from "react";
-import imageUrl from "@images/main-page/playground/kurd9/front.png";
-import imageUrlBack from "@images/main-page/playground/kurd9/back.png";
+// import imageUrl from "@images/main-page/playground/kurd9/front.png";
+// import imageUrlBack from "@images/main-page/playground/kurd9/back.png";
 
 import "./_index.scss";
 
@@ -9,8 +9,8 @@ export default function HandPan(props) {
     selectedNote,
     notesList,
     selectedHandpan,
-    // imageUrl,
-    // imageUrlBack,
+    imageUrl,
+    imageUrlBack,
     turnHandpan,
   } = {
     ...props,

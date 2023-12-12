@@ -191,7 +191,7 @@ export const ScalesSlice = createSlice({
       state.scales = action.payload;
     },
     setSelectedScale(state, action) {
-      state.scales = action.payload;
+      state.selectedScale = action.payload;
     },
   },
 

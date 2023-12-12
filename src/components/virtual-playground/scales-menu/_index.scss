@@ -1,0 +1,71 @@
+@import "@scss/_variables.scss";
+
+.scales-dd {
+  &__btn {
+    display: flex;
+  }
+
+  &__list {
+    position: absolute;
+    width: 100%;
+    top: 30px;
+    z-index: 100;
+    left: 0;
+    background: $dropdown-background-color;
+    padding: 10px;
+    border-radius: 10px;
+    color: $dropdown-text-color;
+    text-align: left;
+    letter-spacing: 2px;
+    line-height: 20px;
+    border: 1px solid $dropdown-border-color;
+  }
+  &__item {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+  }
+  &__item-links {
+    display: flex;
+    align-items: center;
+    & a {
+      display: block;
+      margin-right: 5px;
+    }
+
+    & img {
+      width: 25px;
+      height: 25px;
+    }
+  }
+  &__item-info {
+    margin-right: 15px;
+  }
+
+  &__item-name {
+    color: $dropdown-titles-color;
+    font-weight: 600;
+  }
+
+  &__item-notes {
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.scales-dd {
+  &__item-info {
+  }
+
+  &__item-name {
+  }
+
+  &__item-notes {
+  }
+
+  &__item-links {
+  }
+}
