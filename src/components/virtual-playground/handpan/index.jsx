@@ -21,6 +21,7 @@ export default function HandPan(props) {
       <button
         key={index}
         id={note.tone}
+        data-number={note.order}
         className={
           selectedNote == note.tone
             ? `handpan__note handpan__note-${note.order} handpan-note-play`

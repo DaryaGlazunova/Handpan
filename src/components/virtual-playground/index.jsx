@@ -18,6 +18,12 @@ import { playNoteAudio } from "../../utils/playAudio";
 import imageFront from "@images/main-page/playground/kurd9/front.png";
 import imageBack from "@images/main-page/playground/kurd9/back.png";
 import Button from "../button";
+import SelectNotesPopup from "./select-notes-popup";
+
+const playgroundModes = {
+  play: "play",
+  create: "create",
+};
 
 export default function VirtualPlayground(props) {
   const dispatch = useDispatch();
@@ -34,12 +40,17 @@ export default function VirtualPlayground(props) {
 
   const sampleDefaultValue = React.useRef([]);
   const [selectedNote, setSelectedNote] = React.useState(null);
-
+  const [selectedPlaygroundMode, setSelectedPlaygroundMode] = React.useState(
+    playgroundModes.play
+  );
+  const SelectNotesPopupRef = React.useRef(null);
   const [turnHandpan, setTurnHandpan] = React.useState(false);
   const [noteList, setNoteList] = React.useState([]);
   let frontNotesCount = React.useRef(0);
   const [frontNotesList, setFrontNotesList] = React.useState([]);
   const [backNotesList, setBackNotesList] = React.useState([]);
+
+  const [showSelectNotesPopup, setShowSelectNotesPopup] = React.useState(false);
 
   React.useEffect(() => {
     if (status === Status.success) {
@@ -107,19 +118,65 @@ export default function VirtualPlayground(props) {
         }
       }
       dispatch(setSelectedScale(newSelectedScale));
+      setSelectedPlaygroundMode(playgroundModes.create);
     }
+  };
+
+  const onSelectNewNote = (note) => {
+    let newObject = JSON.parse(JSON.stringify(noteList));
+    newObject = newObject.map((item) => {
+      if (item.order == selectedNote) {
+        item.tone = note;
+      }
+      return item;
+    });
+    console.log("newObject", newObject);
+    setNoteList(newObject);
   };
 
   React.useEffect(() => {
     const onClickPlayNote = (event) => {
+      // if (selectedPlaygroundMode ==='create')
       const target = event.target.closest("button");
+      if (
+        SelectNotesPopupRef.current &&
+        SelectNotesPopupRef.current.contains(target)
+      ) {
+        return;
+      }
+
       if (target) {
         if (target.id) {
           const tone = target.id;
 
           if (tone.length == 1) {
+            setSelectedNote(target.dataset.number);
+            setShowSelectNotesPopup(true);
             return;
+          } else {
+            console.log("tone", tone);
+            setSelectedNote(tone);
+            setTimeout(() => setSelectedNote(null), 600);
+            playNoteAudio(tone);
           }
+        }
+      }
+    };
+
+    window.addEventListener("click", (event) => onClickPlayNote(event));
+
+    return () => {
+      window.removeEventListener("click", (event) => onClickPlayNote(event));
+    };
+  }, []);
+
+  React.useEffect(() => {
+    const onClickPlayNote = (event) => {
+      if (selectedPlaygroundMode === playgroundModes.create) return;
+
+      if (target) {
+        if (target.id) {
+          const tone = target.id;
           setSelectedNote(tone);
           setTimeout(() => setSelectedNote(null), 600);
           playNoteAudio(tone);
@@ -140,6 +197,13 @@ export default function VirtualPlayground(props) {
         <div>loading</div>
       ) : (
         <div className="playground__container">
+          <SelectNotesPopup
+            onSelectNewNote={onSelectNewNote}
+            showPopup={showSelectNotesPopup}
+            setShowPopup={setShowSelectNotesPopup}
+            notesList={noteOrder}
+            SelectNotesPopupRef={SelectNotesPopupRef}
+          />
           <div className="playground__top">
             <ScaleLine
               scaleName={selectedScale.name}

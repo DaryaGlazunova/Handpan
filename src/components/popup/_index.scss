@@ -1,0 +1,50 @@
+@import "@scss/_variables.scss";
+
+.hidden-popup {
+  opacity: 0;
+  transition: 0.5s;
+  z-index: -10;
+}
+
+.popup {
+  z-index: 200;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 1;
+  transition: 0.5s;
+
+  &__background {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(79, 79, 79, 0.62);
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__wrapper {
+    max-width: 980px;
+    position: relative;
+    margin: 0 30px;
+  }
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+    cursor: pointer;
+
+    & img {
+      width: 30px;
+      height: auto;
+    }
+  }
+
+  &__body {
+    padding: 33px;
+    background-color: $popup-background-color;
+    border-radius: 10px;
+  }
+}

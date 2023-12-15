@@ -1,0 +1,48 @@
+@import "@scss/_variables.scss";
+
+.create-scale {
+  &__top {
+    text-align: right;
+    margin-bottom: 20px;
+  }
+
+  &__confirm-img {
+    width: 30px;
+    height: auto;
+    cursor: pointer;
+
+    &_not-active {
+      opacity: 0.5;
+    }
+  }
+
+  &__note-list {
+    -webkit-column-count: 8;
+    -moz-column-count: 8;
+    column-count: 8;
+  }
+
+  &__note-item {
+    width: 40px;
+    height: 40px;
+    margin: 3px;
+    background-color: $popup-note-background-color;
+    color: $popup-text-color;
+    border-radius: 5px;
+    &:hover {
+      box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    }
+    &_selected {
+      border: 1px solid #000;
+      box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+    }
+  }
+  &__note-tone {
+    margin-bottom: 3px;
+  }
+  &__note-image {
+    & img {
+      width: 15px;
+    }
+  }
+}

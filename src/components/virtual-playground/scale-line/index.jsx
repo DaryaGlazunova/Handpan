@@ -9,6 +9,7 @@ export default function ScaleLine(props) {
       <button
         key={index}
         id={note.tone}
+        data-number={note.order}
         className={
           selectedNote == note.tone
             ? "notes__note tone scale-note-selected"
