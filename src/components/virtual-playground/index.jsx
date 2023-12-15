@@ -20,11 +20,6 @@ import imageBack from "@images/main-page/playground/kurd9/back.png";
 import Button from "../button";
 import SelectNotesPopup from "./select-notes-popup";
 
-const playgroundModes = {
-  play: "play",
-  create: "create",
-};
-
 export default function VirtualPlayground(props) {
   const dispatch = useDispatch();
   const { scales, status, selectedScale, noteOrder } = useSelector(
@@ -40,17 +35,13 @@ export default function VirtualPlayground(props) {
 
   const sampleDefaultValue = React.useRef([]);
   const [selectedNote, setSelectedNote] = React.useState(null);
-  const [selectedPlaygroundMode, setSelectedPlaygroundMode] = React.useState(
-    playgroundModes.play
-  );
   const SelectNotesPopupRef = React.useRef(null);
   const [turnHandpan, setTurnHandpan] = React.useState(false);
   const [noteList, setNoteList] = React.useState([]);
-  let frontNotesCount = React.useRef(0);
   const [frontNotesList, setFrontNotesList] = React.useState([]);
   const [backNotesList, setBackNotesList] = React.useState([]);
-
   const [showSelectNotesPopup, setShowSelectNotesPopup] = React.useState(false);
+  let frontNotesCount = React.useRef(0);
 
   React.useEffect(() => {
     if (status === Status.success) {
@@ -118,7 +109,6 @@ export default function VirtualPlayground(props) {
         }
       }
       dispatch(setSelectedScale(newSelectedScale));
-      setSelectedPlaygroundMode(playgroundModes.create);
     }
   };
 
@@ -136,7 +126,6 @@ export default function VirtualPlayground(props) {
 
   React.useEffect(() => {
     const onClickPlayNote = (event) => {
-      // if (selectedPlaygroundMode ==='create')
       const target = event.target.closest("button");
       if (
         SelectNotesPopupRef.current &&
@@ -154,7 +143,6 @@ export default function VirtualPlayground(props) {
             setShowSelectNotesPopup(true);
             return;
           } else {
-            console.log("tone", tone);
             setSelectedNote(tone);
             setTimeout(() => setSelectedNote(null), 600);
             playNoteAudio(tone);
@@ -164,28 +152,6 @@ export default function VirtualPlayground(props) {
     };
 
     window.addEventListener("click", (event) => onClickPlayNote(event));
-
-    return () => {
-      window.removeEventListener("click", (event) => onClickPlayNote(event));
-    };
-  }, []);
-
-  React.useEffect(() => {
-    const onClickPlayNote = (event) => {
-      if (selectedPlaygroundMode === playgroundModes.create) return;
-
-      if (target) {
-        if (target.id) {
-          const tone = target.id;
-          setSelectedNote(tone);
-          setTimeout(() => setSelectedNote(null), 600);
-          playNoteAudio(tone);
-        }
-      }
-    };
-
-    window.addEventListener("click", (event) => onClickPlayNote(event));
-
     return () => {
       window.removeEventListener("click", (event) => onClickPlayNote(event));
     };
