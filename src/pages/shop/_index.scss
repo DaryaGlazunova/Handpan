@@ -1,0 +1,36 @@
+.content {
+  &__container {
+    padding: 40px 25px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__top {
+  }
+
+  &__error-info {
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 40px;
+    grid-row-gap: 30px;
+
+    @media (max-width: 1600px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media (max-width: 1240px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 630px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__pagination {
+  }
+}
+.container {
+}

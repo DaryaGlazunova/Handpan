@@ -20,6 +20,11 @@ import imageBack from "@images/main-page/playground/kurd9/back.png";
 import Button from "../button";
 import SelectNotesPopup from "./select-notes-popup";
 
+const modes = {
+  play: "play",
+  create: "create",
+};
+
 export default function VirtualPlayground(props) {
   const dispatch = useDispatch();
   const { scales, status, selectedScale, noteOrder } = useSelector(
@@ -35,6 +40,7 @@ export default function VirtualPlayground(props) {
 
   const sampleDefaultValue = React.useRef([]);
   const [selectedNote, setSelectedNote] = React.useState(null);
+  const mode = React.useRef(modes.play);
   const SelectNotesPopupRef = React.useRef(null);
   const [turnHandpan, setTurnHandpan] = React.useState(false);
   const [noteList, setNoteList] = React.useState([]);
@@ -87,6 +93,7 @@ export default function VirtualPlayground(props) {
   };
 
   const onSelectScale = (event) => {
+    mode.current = modes.play;
     const scaleId = event.currentTarget.id;
     const newSelectedScale = scales.find((scale) => scale.id == scaleId);
     if (newSelectedScale) {
@@ -95,6 +102,7 @@ export default function VirtualPlayground(props) {
   };
 
   const onClickCreateNewScale = (event) => {
+    mode.current = modes.create;
     const scaleId = event.currentTarget.id;
     let newSelectedScale = scales.find((scale) => scale.id == scaleId);
 
@@ -115,6 +123,7 @@ export default function VirtualPlayground(props) {
   const onSelectNewNote = (note) => {
     let newObject = JSON.parse(JSON.stringify(noteList));
     newObject = newObject.map((item) => {
+      console.log("selectedNote", selectedNote);
       if (item.order == selectedNote) {
         item.tone = note;
       }
@@ -126,6 +135,23 @@ export default function VirtualPlayground(props) {
 
   React.useEffect(() => {
     const onClickPlayNote = (event) => {
+      if (mode.current === modes.create) return;
+
+      const target = event.target.closest("button");
+
+      if (target) {
+        if (target.id) {
+          const tone = target.id;
+
+          setSelectedNote(tone);
+          setTimeout(() => setSelectedNote(null), 600);
+          playNoteAudio(tone);
+        }
+      }
+    };
+    const onClickPlayNewNote = (event) => {
+      if (mode.current === modes.play) return;
+
       const target = event.target.closest("button");
       if (
         SelectNotesPopupRef.current &&
@@ -144,16 +170,24 @@ export default function VirtualPlayground(props) {
             return;
           } else {
             setSelectedNote(tone);
-            setTimeout(() => setSelectedNote(null), 600);
-            playNoteAudio(tone);
+
+            if (target.className.includes("notes__note")) {
+              setSelectedNote(target.dataset.number);
+              setShowSelectNotesPopup(true);
+            } else {
+              playNoteAudio(tone);
+              setTimeout(() => setSelectedNote(null), 600);
+            }
           }
         }
       }
     };
 
     window.addEventListener("click", (event) => onClickPlayNote(event));
+    window.addEventListener("click", (event) => onClickPlayNewNote(event));
     return () => {
       window.removeEventListener("click", (event) => onClickPlayNote(event));
+      window.removeEventListener("click", (event) => onClickPlayNewNote(event));
     };
   }, []);
 

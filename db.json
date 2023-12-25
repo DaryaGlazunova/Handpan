@@ -1,0 +1,258 @@
+{
+  "handpans": [
+    {
+      "id": 1,
+      "name": "D Celtic minor",
+      "type": "kurd9",
+      "fronSide": {
+        "notes": [
+          {
+            "tone": "D3",
+            "order": 0
+          },
+          {
+            "tone": "A3",
+            "order": 1
+          },
+          {
+            "tone": "C4",
+            "order": 2
+          },
+          {
+            "tone": "D4",
+            "order": 3
+          },
+          {
+            "tone": "E4",
+            "order": 4
+          },
+          {
+            "tone": "F4",
+            "order": 5
+          },
+          {
+            "tone": "G4",
+            "order": 6
+          },
+          {
+            "tone": "A4",
+            "order": 7
+          },
+          {
+            "tone": "C5",
+            "order": 8
+          }
+        ],
+        "image": "handpanImageFront"
+      },
+      "backSide": {
+        "notes": [],
+        "image": "handpanImageBack"
+      }
+    },
+    {
+      "id": 2,
+      "type": "kurd11",
+      "name": "D Celtic minor+2",
+      "fronSide": {
+        "notes": [
+          {
+            "tone": "D3",
+            "order": 0
+          },
+          {
+            "tone": "A3",
+            "order": 1
+          },
+          {
+            "tone": "C4",
+            "order": 2
+          },
+          {
+            "tone": "D4",
+            "order": 3
+          },
+          {
+            "tone": "E4",
+            "order": 4
+          },
+          {
+            "tone": "F4",
+            "order": 5
+          },
+          {
+            "tone": "G4",
+            "order": 6
+          },
+          {
+            "tone": "A4",
+            "order": 7
+          },
+          {
+            "tone": "C5",
+            "order": 8
+          }
+        ],
+        "image": "handpanImageFront"
+      },
+      "backSide": {
+        "notes": [
+          {
+            "tone": "F3",
+            "order": 9
+          },
+          {
+            "tone": "B3",
+            "order": 10
+          }
+        ],
+        "image": "handpanImageBack"
+      }
+    },
+    {
+      "id": 3,
+      "type": "kurd11",
+      "name": "D Celtic minor+4",
+      "fronSide": {
+        "notes": [
+          {
+            "tone": "F3",
+            "order": 0
+          },
+          {
+            "tone": "G3",
+            "order": 1
+          },
+          {
+            "tone": "G#3",
+            "order": 2
+          },
+          {
+            "tone": "C4",
+            "order": 3
+          },
+          {
+            "tone": "D#4",
+            "order": 4
+          },
+          {
+            "tone": "F4",
+            "order": 5
+          },
+          {
+            "tone": "G4",
+            "order": 6
+          },
+          {
+            "tone": "G#4",
+            "order": 7
+          },
+          {
+            "tone": "C5",
+            "order": 8
+          }
+        ],
+        "image": "handpanImageFront"
+      },
+      "backSide": {
+        "notes": [
+          {
+            "tone": "C#3",
+            "order": 9
+          },
+          {
+            "tone": "D#3",
+            "order": 10
+          },
+          {
+            "tone": "D#5",
+            "order": 11
+          },
+          {
+            "tone": "F5",
+            "order": 12
+          }
+        ],
+        "image": "handpanImageBack"
+      }
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "До Пигми (СТ) OHP-BST-53-9-Pygmy-Cm+case",
+      "images": [
+        "https://sun9-50.userapi.com/impg/T9W7SNl3_inGjFLRe4qGeIgPVxx08EJYl-UbAw/SOg4CF1lxOQ.jpg?size=510x680&quality=95&sign=2ff62d1a87693a4e949e3ec32d234c4f&c_uniq_tag=V9Ri9k-UyU1LBwDnwkQUfLKRdI0BB4ajLJlf850Lrjs&type=album",
+        "https://sun9-80.userapi.com/impg/JQnfsqDa1HsHt91_O-Eke9E7mWbMCtQqOKgo4A/3HU_FbcYoFU.jpg?size=510x680&quality=95&sign=c34be324afe70d57f38841aa2bfebca4&c_uniq_tag=Ke231Fk9PWOD3-EQJ9gs2TFVbCXJu4pQYKC_9ABrJeQ&type=album",
+        "https://sun9-51.userapi.com/impg/akHtMI0YSL3wnH4liOEpGSWVsTNZFB0L0YL8LQ/dBNQSFqBguE.jpg?size=510x680&quality=95&sign=57e31be01f7cfc858393b6d9389c54d6&c_uniq_tag=OO9AhOsmJWUtQdr6wdJq9gorlPY-HBGKn4CV8G9Sh2U&type=album",
+        "https://sun9-80.userapi.com/impg/xM2Nv_XQMXH36RBIqVMHhvj7wcQn_m3shuTXQQ/c_wlqdSqEJg.jpg?size=510x680&quality=95&sign=18d74619b119c616cd8083756d009c8f&c_uniq_tag=F4DXgYeUHBBO57-Z_yk6RNLsDtKEcvSIZpa0lltwUPg&type=album"
+      ],
+      "price": "95000",
+      "description": "Строй До Пигми - это отличный выбор для новичков. Настроение инструмента медитативное и размеренное . Не торопит , а погружает в медитацию и импровизацию. Инструмент имеет продолжительный сустейн , обладает очень чистым звучанием и богат обертонами. Каждое нотное поле имеет основной тон и 2 обертона настроенных в октаву и квинту. \n Имеет классические 9 нотных полей: 8 по окружности и динг в центре. \n Звукоряд (строй) инструмента ( Пигми До минор) по нотам : C3/ G3 Ab3 C4 Eb4 F4 G4 Ab4 C5 Стандартная настройка в 440Ghz. \n Гарантия на подстройку 3 года. \n Чехол в комплекте. \n Подставка в комплект не входит",
+      "specifications": {
+        "Weight": "5",
+        "Diameter": "53",
+        "Height": "22-24",
+        "Color": "всегда уникален , чаще градиент тёмно-синего / серо-синего",
+        "Steel": "Азотированная СТ до 1.2мм"
+      }
+    },
+    {
+      "id": 2,
+      "name": "До Пигми (СТ) OHP-BST-53-9-Pygmy-Cm+case",
+      "images": [
+        "https://sun9-50.userapi.com/impg/T9W7SNl3_inGjFLRe4qGeIgPVxx08EJYl-UbAw/SOg4CF1lxOQ.jpg?size=510x680&quality=95&sign=2ff62d1a87693a4e949e3ec32d234c4f&c_uniq_tag=V9Ri9k-UyU1LBwDnwkQUfLKRdI0BB4ajLJlf850Lrjs&type=album",
+        "https://sun9-80.userapi.com/impg/JQnfsqDa1HsHt91_O-Eke9E7mWbMCtQqOKgo4A/3HU_FbcYoFU.jpg?size=510x680&quality=95&sign=c34be324afe70d57f38841aa2bfebca4&c_uniq_tag=Ke231Fk9PWOD3-EQJ9gs2TFVbCXJu4pQYKC_9ABrJeQ&type=album",
+        "https://sun9-51.userapi.com/impg/akHtMI0YSL3wnH4liOEpGSWVsTNZFB0L0YL8LQ/dBNQSFqBguE.jpg?size=510x680&quality=95&sign=57e31be01f7cfc858393b6d9389c54d6&c_uniq_tag=OO9AhOsmJWUtQdr6wdJq9gorlPY-HBGKn4CV8G9Sh2U&type=album",
+        "https://sun9-80.userapi.com/impg/xM2Nv_XQMXH36RBIqVMHhvj7wcQn_m3shuTXQQ/c_wlqdSqEJg.jpg?size=510x680&quality=95&sign=18d74619b119c616cd8083756d009c8f&c_uniq_tag=F4DXgYeUHBBO57-Z_yk6RNLsDtKEcvSIZpa0lltwUPg&type=album"
+      ],
+      "price": "95000",
+      "description": "Строй До Пигми - это отличный выбор для новичков. Настроение инструмента медитативное и размеренное . Не торопит , а погружает в медитацию и импровизацию. Инструмент имеет продолжительный сустейн , обладает очень чистым звучанием и богат обертонами. Каждое нотное поле имеет основной тон и 2 обертона настроенных в октаву и квинту. \n Имеет классические 9 нотных полей: 8 по окружности и динг в центре. \n Звукоряд (строй) инструмента ( Пигми До минор) по нотам : C3/ G3 Ab3 C4 Eb4 F4 G4 Ab4 C5 Стандартная настройка в 440Ghz. \n Гарантия на подстройку 3 года. \n Чехол в комплекте. \n Подставка в комплект не входит",
+      "specifications": {
+        "Weight": "5",
+        "Diameter": "53",
+        "Height": "22-24",
+        "Color": "всегда уникален , чаще градиент тёмно-синего / серо-синего",
+        "Steel": "Азотированная СТ до 1.2мм"
+      }
+    },
+    {
+      "id": 3,
+      "name": "До Пигми (СТ) OHP-BST-53-9-Pygmy-Cm+case",
+      "images": [
+        "https://sun9-50.userapi.com/impg/T9W7SNl3_inGjFLRe4qGeIgPVxx08EJYl-UbAw/SOg4CF1lxOQ.jpg?size=510x680&quality=95&sign=2ff62d1a87693a4e949e3ec32d234c4f&c_uniq_tag=V9Ri9k-UyU1LBwDnwkQUfLKRdI0BB4ajLJlf850Lrjs&type=album",
+        "https://sun9-80.userapi.com/impg/JQnfsqDa1HsHt91_O-Eke9E7mWbMCtQqOKgo4A/3HU_FbcYoFU.jpg?size=510x680&quality=95&sign=c34be324afe70d57f38841aa2bfebca4&c_uniq_tag=Ke231Fk9PWOD3-EQJ9gs2TFVbCXJu4pQYKC_9ABrJeQ&type=album",
+        "https://sun9-51.userapi.com/impg/akHtMI0YSL3wnH4liOEpGSWVsTNZFB0L0YL8LQ/dBNQSFqBguE.jpg?size=510x680&quality=95&sign=57e31be01f7cfc858393b6d9389c54d6&c_uniq_tag=OO9AhOsmJWUtQdr6wdJq9gorlPY-HBGKn4CV8G9Sh2U&type=album",
+        "https://sun9-80.userapi.com/impg/xM2Nv_XQMXH36RBIqVMHhvj7wcQn_m3shuTXQQ/c_wlqdSqEJg.jpg?size=510x680&quality=95&sign=18d74619b119c616cd8083756d009c8f&c_uniq_tag=F4DXgYeUHBBO57-Z_yk6RNLsDtKEcvSIZpa0lltwUPg&type=album"
+      ],
+      "price": "95000",
+      "description": "Строй До Пигми - это отличный выбор для новичков. Настроение инструмента медитативное и размеренное . Не торопит , а погружает в медитацию и импровизацию. Инструмент имеет продолжительный сустейн , обладает очень чистым звучанием и богат обертонами. Каждое нотное поле имеет основной тон и 2 обертона настроенных в октаву и квинту. \n Имеет классические 9 нотных полей: 8 по окружности и динг в центре. \n Звукоряд (строй) инструмента ( Пигми До минор) по нотам : C3/ G3 Ab3 C4 Eb4 F4 G4 Ab4 C5 Стандартная настройка в 440Ghz. \n Гарантия на подстройку 3 года. \n Чехол в комплекте. \n Подставка в комплект не входит",
+      "specifications": {
+        "Weight": "5",
+        "Diameter": "53",
+        "Height": "22-24",
+        "Color": "всегда уникален , чаще градиент тёмно-синего / серо-синего",
+        "Steel": "Азотированная СТ до 1.2мм"
+      }
+    },
+    {
+      "id": 4,
+      "name": "До Пигми (СТ) OHP-BST-53-9-Pygmy-Cm+case",
+      "images": [
+        "https://sun9-50.userapi.com/impg/T9W7SNl3_inGjFLRe4qGeIgPVxx08EJYl-UbAw/SOg4CF1lxOQ.jpg?size=510x680&quality=95&sign=2ff62d1a87693a4e949e3ec32d234c4f&c_uniq_tag=V9Ri9k-UyU1LBwDnwkQUfLKRdI0BB4ajLJlf850Lrjs&type=album",
+        "https://sun9-80.userapi.com/impg/JQnfsqDa1HsHt91_O-Eke9E7mWbMCtQqOKgo4A/3HU_FbcYoFU.jpg?size=510x680&quality=95&sign=c34be324afe70d57f38841aa2bfebca4&c_uniq_tag=Ke231Fk9PWOD3-EQJ9gs2TFVbCXJu4pQYKC_9ABrJeQ&type=album",
+        "https://sun9-51.userapi.com/impg/akHtMI0YSL3wnH4liOEpGSWVsTNZFB0L0YL8LQ/dBNQSFqBguE.jpg?size=510x680&quality=95&sign=57e31be01f7cfc858393b6d9389c54d6&c_uniq_tag=OO9AhOsmJWUtQdr6wdJq9gorlPY-HBGKn4CV8G9Sh2U&type=album",
+        "https://sun9-80.userapi.com/impg/xM2Nv_XQMXH36RBIqVMHhvj7wcQn_m3shuTXQQ/c_wlqdSqEJg.jpg?size=510x680&quality=95&sign=18d74619b119c616cd8083756d009c8f&c_uniq_tag=F4DXgYeUHBBO57-Z_yk6RNLsDtKEcvSIZpa0lltwUPg&type=album"
+      ],
+      "price": "95000",
+      "description": "Строй До Пигми - это отличный выбор для новичков. Настроение инструмента медитативное и размеренное . Не торопит , а погружает в медитацию и импровизацию. Инструмент имеет продолжительный сустейн , обладает очень чистым звучанием и богат обертонами. Каждое нотное поле имеет основной тон и 2 обертона настроенных в октаву и квинту. \n Имеет классические 9 нотных полей: 8 по окружности и динг в центре. \n Звукоряд (строй) инструмента ( Пигми До минор) по нотам : C3/ G3 Ab3 C4 Eb4 F4 G4 Ab4 C5 Стандартная настройка в 440Ghz. \n Гарантия на подстройку 3 года. \n Чехол в комплекте. \n Подставка в комплект не входит",
+      "specifications": {
+        "Weight": "5",
+        "Diameter": "53",
+        "Height": "22-24",
+        "Color": "всегда уникален , чаще градиент тёмно-синего / серо-синего",
+        "Steel": "Азотированная СТ до 1.2мм"
+      }
+    }
+  ]
+}

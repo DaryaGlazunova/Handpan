@@ -14,7 +14,7 @@ const Menu = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/shop" className="menu__item">
+            <NavLink to="/Shop" className="menu__item">
               Магазин
             </NavLink>
           </li>

@@ -40,6 +40,7 @@ export default function SelectNotesPopup(props) {
   }, []);
 
   const onClickConfirm = () => {
+    console.log("selectedNote", selectedNote);
     if (!selectedNote) return;
     setShowPopup(false);
     onSelectNewNote(selectedNote);
