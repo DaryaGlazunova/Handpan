@@ -2,7 +2,7 @@ import React from "react";
 
 import ProductItem from "../../components/product-item";
 import ProductItemSkeleton from "../../components/product-item/skeleton";
-import Popup from "../../components/popup";
+
 import { useSelector, useDispatch } from "react-redux";
 import fetchProducts from "../../redux/products/asyncActions";
 import { Status } from "../../redux/products/productSlice";
@@ -10,17 +10,9 @@ import "./_index.scss";
 
 const Shop = () => {
   const { items, status } = useSelector((state) => state.products);
-  const [popupData, setPopupData] = React.useState();
   const dispatch = useDispatch();
 
-  const [showPopup, setShowPopup] = React.useState(false);
-
-  const openPopup = (event) => {
-    const target = event.target;
-    const pruductId = target.id;
-    setPopupData(items.find((item) => item.id == pruductId));
-    setShowPopup((prev) => !prev);
-  };
+  const onClickProductItem = (event) => {};
 
   const getProducts = async () => {
     dispatch(fetchProducts());
@@ -32,11 +24,7 @@ const Shop = () => {
   }, []);
 
   const products = items.map((productData) => (
-    <ProductItem
-      key={productData.id}
-      productData={productData}
-      openPopup={openPopup}
-    />
+    <ProductItem key={productData.id} productData={productData} />
   ));
 
   const skeletons = [...new Array(8)].map((_, index) => (
@@ -45,11 +33,6 @@ const Shop = () => {
 
   return (
     <div className="content__container container">
-      <Popup
-        showPopup={showPopup}
-        setShowPopup={setShowPopup}
-        cartItemData={popupData}
-      />
       <div className="content__top"></div>
       {status === Status.ERROR ? (
         <div className="content__error-info">

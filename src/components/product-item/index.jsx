@@ -3,10 +3,41 @@ import "./_index.scss";
 import ImageSlider from "../image-slider";
 import minusImg from "@images/svg/minus.svg";
 import plusImg from "@images/svg/plus.svg";
+import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { addItem, minusItem, removeItem } from "../../redux/basket/basketSlice";
+import ChangeAmountButtons from "../changeAmountButton";
 
-const ProductItem = ({ productData, openPopup }) => {
-  const { id, name, images, price, description, specifications } = {
+const ProductItem = ({ productData }) => {
+  const { id, name, images, price } = {
     ...productData,
+  };
+
+  const selectProductsItem = (id) => (state) =>
+    state.basket.itemsInBasket.find((item) => item.id === id);
+
+  const productItem = useSelector(selectProductsItem(id));
+  const addedCount = productItem ? productItem.count : 0;
+  const dispatch = useDispatch();
+
+  const onClickAddButton = () => {
+    const item = {
+      id,
+      name,
+      price,
+      images,
+      count: 1,
+    };
+    dispatch(addItem(item));
+  };
+
+  const onClickRemoveButton = () => {
+    if (addedCount > 1) {
+      dispatch(minusItem(id));
+    }
+    if (addedCount === 1) {
+      dispatch(removeItem(id));
+    }
   };
 
   return (
@@ -14,33 +45,18 @@ const ProductItem = ({ productData, openPopup }) => {
       <div className="product-item__image">
         <ImageSlider slides={images} sliderData={images} />
       </div>
-      <div
-        id={id}
-        className="product-item__title"
-        onClick={(event) => openPopup(event)}
-      >
+      <Link to={`/Shop/${id}`} className="product-item__title">
         {name}
-      </div>
+      </Link>
       <div className="product-item__footer">
         <div className="product-item__price">
           <span>{price}</span> руб.
         </div>
-        <div className="product-item__amount-block">
-          <button
-            className="product-item__remove-button"
-            // onClick={onClickRemoveButton}
-          >
-            <img src={minusImg} alt="" />
-          </button>
-
-          <span className="product-item__amount">1</span>
-          <button
-            className="product-item__add-button"
-            // onClick={onClickAddButton}
-          >
-            <img src={plusImg} alt="" />
-          </button>
-        </div>
+        <ChangeAmountButtons
+          onClickPlus={onClickAddButton}
+          onClickMinus={onClickRemoveButton}
+          amount={addedCount}
+        />
       </div>
     </div>
   );

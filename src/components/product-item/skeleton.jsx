@@ -7,7 +7,7 @@ const ProductItemSkeleton = () => (
     className="Product-item"
     width="100%"
     height="100%"
-    viewBox="0 0 292 400"
+    viewBox="0 0 292 350"
     backgroundColor="#f3f3f3"
     foregroundColor="#ecebeb"
   >

@@ -20,6 +20,7 @@
 
   &__item {
     color: $font-color-white;
+    position: relative;
     font-size: 14px;
     font-family: $main-font-family;
     text-transform: uppercase;
@@ -31,6 +32,22 @@
     & .active {
       text-decoration: underline;
     }
+  }
+
+  &__itemsCount {
+    position: absolute;
+    bottom: 12px;
+    right: -10px;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    padding: 2px 0 0 1px;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    border-radius: 50%;
+    font-weight: 600;
+    background-color: orange;
   }
 
   &__social-media {

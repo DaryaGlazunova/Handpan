@@ -6,15 +6,23 @@
   background-color: $product-item-background-color;
   padding: 20px;
   overflow: hidden;
+  box-shadow: 0px 5px 10px 0px rgb(0, 0, 0);
 
   &__image {
+    min-height: 432px;
     margin-bottom: 30px;
+    width: 300px;
+    margin: 0 auto;
+    & img {
+      width: 100%;
+    }
   }
 
   &__title {
     margin-bottom: 15px;
     font-weight: 600;
     font-size: 17px;
+    color: black;
     cursor: pointer;
     &:hover {
       text-decoration: underline;
@@ -23,12 +31,6 @@
 
   &__footer {
     text-align: center;
-    & img {
-      width: 25px;
-      background-color: $product-item-btn-background-color;
-      border-radius: 8px;
-      padding: 2px;
-    }
   }
 
   &__price {

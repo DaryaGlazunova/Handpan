@@ -17,7 +17,7 @@ import { playNoteAudio } from "../../utils/playAudio";
 
 import imageFront from "@images/main-page/playground/kurd9/front.png";
 import imageBack from "@images/main-page/playground/kurd9/back.png";
-import Button from "../button";
+import Button from "../virtual-playground/button";
 import SelectNotesPopup from "./select-notes-popup";
 
 const modes = {
@@ -123,13 +123,11 @@ export default function VirtualPlayground(props) {
   const onSelectNewNote = (note) => {
     let newObject = JSON.parse(JSON.stringify(noteList));
     newObject = newObject.map((item) => {
-      console.log("selectedNote", selectedNote);
       if (item.order == selectedNote) {
         item.tone = note;
       }
       return item;
     });
-    console.log("newObject", newObject);
     setNoteList(newObject);
   };
 

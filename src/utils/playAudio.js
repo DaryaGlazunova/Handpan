@@ -4,8 +4,10 @@ export const playNoteAudio = (tone) => {
   //   import.meta.url
   // ).href;
 
-  const audioUrl = new URL(`../assets/sounds/${tone}.wav`, import.meta.url)
-    .href;
+  const audioUrl = new URL(
+    `../assets/sounds/${tone.replace("#", "_")}.wav`,
+    import.meta.url
+  ).href;
 
   let audio = new Audio(audioUrl);
   audio.play();

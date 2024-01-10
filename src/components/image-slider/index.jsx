@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import "./_index.scss";
 
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
@@ -38,16 +39,16 @@ const ImageSlider = ({ slides, sliderData }) => {
             </div>
           );
         })}
-      </div>
-      <div className="slider__arrows">
-        <FaArrowAltCircleLeft
-          className="slider__left-arrow"
-          onClick={prevSlide}
-        />
-        <FaArrowAltCircleRight
-          className="slider__right-arrow"
-          onClick={nextSlide}
-        />
+        <div className="slider__arrows">
+          <FaArrowAltCircleLeft
+            className="slider__left-arrow"
+            onClick={prevSlide}
+          />
+          <FaArrowAltCircleRight
+            className="slider__right-arrow"
+            onClick={nextSlide}
+          />
+        </div>
       </div>
     </section>
   );

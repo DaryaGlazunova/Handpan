@@ -1,6 +1,6 @@
 import React from "react";
 import "./_index.scss";
-import Button from "../../button";
+import Button from "../button";
 import shopSvg from "@images/svg/shop.svg";
 import audioSvg from "@images/svg/audio.svg";
 import videoSvg from "@images/svg/video.svg";

@@ -1,0 +1,23 @@
+.amount-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & img {
+    width: 25px;
+    background-color: #ff7222;
+    border-radius: 8px;
+    padding: 2px;
+  }
+
+  &__remove {
+  }
+
+  &__amount {
+    margin: 0 5px;
+    font-weight: 600;
+  }
+
+  &__add {
+  }
+}

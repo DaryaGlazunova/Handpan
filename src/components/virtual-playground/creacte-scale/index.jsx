@@ -1,6 +1,6 @@
 import React from "react";
 import "./_index.scss";
-import Button from "../../button";
+import Button from "../button";
 import { useOutsideClick } from "../../../hooks/useOutsideClick";
 
 export default function CreateScales(props) {

@@ -1,0 +1,71 @@
+@import "@scss/_variables.scss";
+
+.product-info {
+  color: white;
+  max-width: 1300px;
+  margin: 0 auto;
+  font-weight: 300;
+  font-size: 16px;
+  margin: 50px 0px;
+
+  &__image {
+    min-height: 432px;
+    margin-bottom: 30px;
+    border: 1px solid #000;
+    background-color: white;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0px 5px 10px 0px rgb(0, 0, 0);
+  }
+
+  &__title {
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #ff7222;
+  }
+
+  &__description {
+    margin-bottom: 30px;
+    line-height: 20px;
+  }
+
+  &__specifications {
+    margin-bottom: 30px;
+
+    & ul {
+      & li {
+        margin-bottom: 5px;
+        & span {
+          margin-right: 5px;
+        }
+      }
+
+      & li:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__price {
+    text-align: left;
+    margin-bottom: 30px;
+    & span {
+      font-size: 16px;
+      color: #ff7222;
+      font-weight: 600;
+    }
+  }
+
+  &__amount-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    & span:first-child {
+      margin-right: 10px;
+    }
+  }
+
+  &__footer {
+    text-align: center;
+  }
+}
