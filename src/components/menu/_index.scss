@@ -1,6 +1,10 @@
 @import "@scss/_variables.scss";
 
 .menu {
+  &__burger {
+    display: none;
+  }
+
   &__body {
     display: flex;
     align-items: center;
@@ -19,10 +23,9 @@
   }
 
   &__item {
-    color: $font-color-white;
+    color: white;
     position: relative;
     font-size: 14px;
-    font-family: $main-font-family;
     text-transform: uppercase;
     letter-spacing: 2px;
     &:hover {
@@ -70,5 +73,95 @@
       width: 35px;
       height: 35px;
     }
+  }
+}
+
+@media (max-width: 767px) {
+  .menu {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 20px;
+  }
+  .menu__burger {
+    position: relative;
+    z-index: 101;
+    display: inline-block;
+    width: 30px;
+    height: 20px;
+
+    & span {
+      position: absolute;
+      background-color: white;
+      height: 2px;
+      width: 30px;
+    }
+
+    &::before,
+    &::after {
+      content: "";
+      background-color: white;
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      left: 0;
+      transition: all 0.3s ease 0s;
+    }
+    &::before {
+      top: 9px;
+    }
+    &::after {
+      bottom: 0;
+    }
+  }
+
+  .menu__body {
+    position: fixed;
+    background-color: #e9911e;
+    left: 0;
+    z-index: 100;
+    top: -100%;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    padding-top: 150px;
+    transition: all 0.5s ease 0s;
+  }
+  .menu__body.active {
+    top: 0;
+  }
+  .menu__burger.active::before {
+    transform: rotate(45deg);
+    top: 9px;
+  }
+  .menu__burger.active::after {
+    transform: rotate(-45deg);
+    bottom: 9px;
+  }
+  .menu__burger.active span {
+    transform: scale(0);
+  }
+
+  .menu__items {
+    flex-direction: column;
+    margin-right: 0;
+    & li {
+      margin-right: 0;
+      margin-bottom: 40px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .menu__item {
+    font-size: 20px;
+  }
+
+  .menu__itemsCount {
+    bottom: 14px;
+    right: -13px;
+    background-color: rgb(255, 255, 255);
   }
 }
